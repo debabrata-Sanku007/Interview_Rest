@@ -21,15 +21,14 @@ public class TestService {
 	@POST
 	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Responses getMap(@PathParam("id") String id) throws StringNotFoundException {
+	public Responses getMap(@PathParam("id") String id){
 		System.out.println("Successful");
 		Responses rep = testdao.getMapResponse().get(id);
-		if (rep == null)
-			throw new StringNotFoundException("[" + id + "] is not Implemented..");
+		if (rep == null){
+			
+		}
+			//throw new StringNotFoundException("[" + id + "] is not Implemented..");
 
 		return rep;
 	}
-	
-	
-	
 }
